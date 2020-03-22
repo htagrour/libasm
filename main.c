@@ -13,12 +13,7 @@ char *ft_strdup(char *str);
 int ft_read(int fd, char *str, int count);
 int main()
 {   
-    //char *str = malloc(13);
-   // int fd = open("main.c", O_RDONLY);
-   // int i = ft_read(1, str, 12);
-   // str[13] = 0;
-   // printf("%s\n",str);
-   // printf("%d",i);
-    ft_write(-15, "hello world", 2);
+    char *str;
+    printf("%s", strcpy(NULL, NULL));
     return (0);
 }
