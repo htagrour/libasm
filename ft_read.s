@@ -1,17 +1,13 @@
 setction.text:
     global ft_read
-    extern fstat
+    extern ___error
 ft_read:
-    cmp rdi , 0
-    jb _error
-    cmp rdx, 0
-    jb _error
-    mov rax, 0x5
+    push rbp
+    call __error
+    pop rbp
+    mov rax, 0x2000003
     syscall
-    cmp rax, -9
-    jz _error
-    mov rax, 0x0
-    syscall
+    jc _error
     ret
 _error:
     mov rax, -1
