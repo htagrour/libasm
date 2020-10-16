@@ -1,11 +1,7 @@
-setcion.text:
-    global ft_strcpy
+section .text
+global _ft_strcpy
 
-ft_strcpy:
-        cmp rdi, 0
-        jz _error
-        cmp rsi , 0
-        jz _error
+_ft_strcpy:
         mov r8, -1
         _loop:
             inc r8
@@ -14,9 +10,6 @@ ft_strcpy:
             jz _end
             mov byte [rdi + r8], dl
             jmp _loop
-_error:
-    mov rax, 0
-    ret
 _end:
     mov rax, rdi
     ret

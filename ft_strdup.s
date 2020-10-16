@@ -1,23 +1,23 @@
 section.text:
-    global ft_strdup
-    extern ft_strcpy
-    extern ft_strlen
-    extern malloc
+    global _ft_strdup
+    extern _ft_strcpy
+    extern _ft_strlen
+    extern _malloc
 
-ft_strdup:
+_ft_strdup:
     cmp rdi , 0
     jz _error
-    call ft_strlen
+    call _ft_strlen
     push rdi
     mov rdi ,rax
     inc rdi
-    call malloc
+    call _malloc
     cmp rax, 0
     jz _error
     pop rdi
     mov rsi, rdi
     mov rdi, rax
-    call ft_strcpy
+    call _ft_strcpy
     ret
 _error:
     mov rax, 0
